@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="title_tabs">
+        <item>电影</item>
+        <item>音乐</item>
+    </string-array>
+
+    <string-array name="movie_list">
+        <item>正在热映</item>
+        <item>即将上映</item>
+        <item>Top250</item>
+        <!--    <item>口碑榜</item>
+            <item>北美票房榜</item>
+            <item>新片榜</item>-->
+    </string-array>
+
+</resources>

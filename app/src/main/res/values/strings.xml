@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Kotlin</string>
+
+    <string name="text_loading">正在拼命加载中...</string>
+</resources>
