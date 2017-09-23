@@ -25,4 +25,4 @@ kotlin WIKI: [Kotlin 官网 ](https://kotlinlang.org/) / [Kotlin 语言中文站
 
 # Thanks
 
-[豆瓣Ap](https://developers.douban.com/wiki/?title=api_v2)
+[豆瓣Api](https://developers.douban.com/wiki/?title=api_v2)
