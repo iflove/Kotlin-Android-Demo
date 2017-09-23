@@ -33,13 +33,19 @@
             android:value="GlideModule" />
 
         <activity
-            android:name=".douban.main.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".douban.splash.SplashActivity"
+            android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".douban.main.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
 
         <provider
@@ -53,12 +59,9 @@
         </provider>
 
         <activity android:name=".anko.AnkoPreviewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
