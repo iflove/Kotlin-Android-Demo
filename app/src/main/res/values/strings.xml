@@ -2,4 +2,5 @@
     <string name="app_name">Kotlin</string>
 
     <string name="text_loading">正在拼命加载中...</string>
+    <string name="text_no_score">暂无评分</string>
 </resources>

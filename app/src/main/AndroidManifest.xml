@@ -41,12 +41,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".douban.main.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -58,10 +55,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".anko.AnkoPreviewActivity">
-
-        </activity>
-
+        <activity android:name=".anko.AnkoPreviewActivity"></activity>
+        <activity android:name=".douban.main.WebUrlActivity"></activity>
     </application>
 
 </manifest>

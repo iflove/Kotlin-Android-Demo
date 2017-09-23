@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RatingBar
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.douban.domain.MovieResourcesProperties
+import com.example.lazy.kotlin.module.utils.ResUtil
 import org.jetbrains.anko.find
 
 /**
@@ -23,9 +25,16 @@ class MovieChildrenAdapter(val movieResourcesProperties: MovieResourcesPropertie
     override fun onBindViewHolder(holder: MovieChildrenViewHolder, position: Int) {
         val subjects = movieResourcesProperties.subjects[position]
         holder.nameTextView.text = subjects.title
-        val bit = subjects.rating.max / holder.ratingBar.numStars
+        val average = subjects.rating.average
+        if (average > 0.0f) {
+            val bit = subjects.rating.max / holder.ratingBar.numStars
+            holder.ratingBar.rating = average / bit
+            holder.ratingTextView.text = average.toString()
+        } else {
+            holder.ratingBar.visibility = View.GONE
+            holder.ratingTextView.text = ResUtil.getString(R.string.text_no_score)
+        }
 
-        holder.ratingBar.rating = subjects.rating.average / bit
         Glide.with(holder.itemView.context).load(subjects.images.medium).into(holder.movieImageView)
     }
 
@@ -41,6 +50,7 @@ class MovieChildrenViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
     val movieImageView = itemView.find<AppCompatImageView>(R.id.movieImageView)
     val nameTextView = itemView.find<AppCompatTextView>(R.id.nameTextView)
     val ratingBar = itemView.find<RatingBar>(R.id.ratingBar)
+    val ratingTextView = itemView.find<TextView>(R.id.ratingTextView)
 }
 
 

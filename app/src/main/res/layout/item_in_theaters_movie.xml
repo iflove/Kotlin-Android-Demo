@@ -14,15 +14,31 @@
         android:id="@+id/nameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
         android:text="name"
         android:textSize="18sp" />
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numStars="5" />
+        android:orientation="horizontal">
 
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:theme="@style/RatingBar" />
+
+        <TextView
+            android:id="@+id/ratingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/text_no_score" />
+    </LinearLayout>
 
 </LinearLayout>

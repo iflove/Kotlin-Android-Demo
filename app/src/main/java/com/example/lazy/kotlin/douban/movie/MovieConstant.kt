@@ -17,7 +17,6 @@ interface MovieConstant {
     }
 
     interface MoviePresenter : BasePresenter {
-//        var movieView: MovieView
 
         fun fetchMovieInTheaters(@Optional @Nullable city: String)
     }
