@@ -10,7 +10,9 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 /**
  * Created by lazy on 2017/7/11.
  */
-class RetrofitModule {
+object RetrofitModule {
+
+    val douBanApiService by lazy { retrofit().create(DouBanApiService::class.java) }
 
     fun defaultOkHttpClient(): OkHttpClient {
         val builder = OkHttpClient.Builder()
@@ -27,7 +29,5 @@ class RetrofitModule {
                 .build()
     }
 
-    fun douBanApiService(): DouBanApiService {
-        return retrofit().create(DouBanApiService::class.java)
-    }
+
 }

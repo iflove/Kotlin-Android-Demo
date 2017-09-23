@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentTransaction
  */
 
 inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {
-    beginTransaction().func().commit()
+    beginTransaction().func().commitAllowingStateLoss()
 }
 
 inline fun Fragment.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) {

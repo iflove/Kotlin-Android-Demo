@@ -28,6 +28,11 @@ class MovieFragment : BaseFragment(), MovieConstant.MovieView {
         processExtraData()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        moviePresenter.unSubscribe()
+    }
+
     override fun setupViews() {
         super.setupViews()
         recyclerView.layoutManager = LinearLayoutManager(this.context)

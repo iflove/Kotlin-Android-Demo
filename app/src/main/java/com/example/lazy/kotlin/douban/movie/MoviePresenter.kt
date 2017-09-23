@@ -18,7 +18,7 @@ class MoviePresenter : BaseDouBanPresenter(), MovieConstant.MoviePresenter {
         val movieInTheaters = douBanApiService.fetchMovieInTheaters(city)
         val comingSoon = douBanApiService.fetchComingSoon(null, null)
         val top250 = douBanApiService.fetchTop250(null, null)
-        Observable.mergeArray(movieInTheaters, comingSoon, top250)
+        val disposable = Observable.mergeArray(movieInTheaters, comingSoon, top250)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe {
@@ -32,8 +32,7 @@ class MoviePresenter : BaseDouBanPresenter(), MovieConstant.MoviePresenter {
                     movieView.hideLoading()
                     movieView.onLoadAllMovieComplete()
                 })
-
-
+        compositeDisposable.add(disposable)
     }
 
 
