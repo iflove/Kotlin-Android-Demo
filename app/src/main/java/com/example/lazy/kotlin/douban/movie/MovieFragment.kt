@@ -8,7 +8,7 @@ import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.douban.anko.component.LoadingFragment
 import com.example.lazy.kotlin.douban.base.BaseFragment
 import com.example.lazy.kotlin.douban.domain.MovieResourcesProperties
-import com.example.lazy.kotlin.module.extension.receiverTransaction
+import com.example.lazy.kotlin.module.extension.inTransaction
 import kotlinx.android.synthetic.main.recycler_view.*
 
 /**
@@ -46,22 +46,19 @@ class MovieFragment : BaseFragment(), MovieConstant.MovieView {
 
     override fun onLoadAllMovieComplete() {
         recyclerView.adapter = movieAdapter
-//        movieAdapter.notifyDataSetChanged()
     }
 
     override fun showLoading() {
         val loadingFragment = LoadingFragment()
-        fragmentManager.beginTransaction()
-                .add(R.id.containerViewId, loadingFragment, "LoadingFragment")
-                .commit()
-
+        fragmentManager.inTransaction {
+            add(R.id.containerViewId, loadingFragment, "LoadingFragment")
+        }
     }
 
     override fun hideLoading() {
-        val fragment = fragmentManager.findFragmentByTag("LoadingFragment")
-        with(receiverTransaction) {
+        val fragment = fragmentManager?.findFragmentByTag("LoadingFragment")
+        fragmentManager.inTransaction {
             remove(fragment)
-            commit()
         }
     }
 

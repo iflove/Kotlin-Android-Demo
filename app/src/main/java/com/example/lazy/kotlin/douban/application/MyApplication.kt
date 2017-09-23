@@ -1,5 +1,6 @@
 package com.example.lazy.kotlin.douban.application
 
+import android.content.Context
 import android.support.multidex.MultiDexApplication
 import com.example.lazy.kotlin.module.network.RetrofitModule
 import com.example.lazy.kotlin.module.utils.ResUtil
@@ -14,8 +15,10 @@ class MyApplication : MultiDexApplication() {
     companion object {
 
         lateinit var instance: MyApplication
+        lateinit var appContext: Context
 
-        lateinit var mRetrofitModule: RetrofitModule
+        lateinit var retrofitModule: RetrofitModule
+
     }
 
     override fun onCreate() {
@@ -25,7 +28,8 @@ class MyApplication : MultiDexApplication() {
 
     fun initialize() {
         instance = this
-        mRetrofitModule = RetrofitModule()
+        appContext = this.applicationContext
+        retrofitModule = RetrofitModule()
 
         Logcat.initialize(this)
         ResUtil.inject(this)

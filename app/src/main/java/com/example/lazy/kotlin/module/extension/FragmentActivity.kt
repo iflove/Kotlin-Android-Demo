@@ -1,7 +1,6 @@
 package com.example.lazy.kotlin.module.extension
 
 import android.app.Activity
-import android.support.v4.app.FragmentActivity
 import android.view.View
 import com.example.lazy.kotlin.R
 import org.jetbrains.anko.AnkoComponent
@@ -27,5 +26,4 @@ fun <T : Activity> Activity.setContainerViewUI(activity: T): View {
     return activity.containerViewUI().setContentView(activity)
 }
 
-val FragmentActivity.receiverTransaction get() = this.supportFragmentManager.beginTransaction()
 

@@ -6,7 +6,7 @@ import com.example.lazy.kotlin.module.network.DouBanApiService
 /**
  * Created by lazy on 2017/7/22.
  */
-open class BaseDouBanPresenter(val douBanApiService: DouBanApiService = MyApplication.mRetrofitModule.douBanApiService()) : BasePresenter {
+open class BaseDouBanPresenter(val douBanApiService: DouBanApiService = MyApplication.retrofitModule.douBanApiService()) : BasePresenter {
 
     override fun subscribe() {
 
