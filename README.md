@@ -20,3 +20,9 @@ in android use kotlin
 kotlin WIKI: [Kotlin 官网 ](https://kotlinlang.org/) / [Kotlin 语言中文站](https://www.kotlincn.net/)
 
 [Kotlin 快速入门](https://iflove.github.io/2017/06/13/Kotlin-quick-start/)
+
+
+
+# Thanks
+
+[豆瓣Ap](https://developers.douban.com/wiki/?title=api_v2)
