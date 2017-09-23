@@ -1,6 +1,8 @@
 package com.example.lazy.kotlin.module.extension
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
 import com.example.lazy.kotlin.douban.application.MyApplication.Companion.appContext
 
 /**
@@ -8,5 +10,15 @@ import com.example.lazy.kotlin.douban.application.MyApplication.Companion.appCon
  */
 
 
+inline val Any.context: Context get() = appContext
+
 @PublishedApi
-internal inline val Any.context: Context get() = appContext
+inline internal fun SharedPreferences.applyMe(func: SharedPreferences.Editor.() -> SharedPreferences.Editor) {
+    this.edit().func().apply()
+}
+
+@SuppressLint("ApplySharedPref")
+@PublishedApi
+inline internal fun SharedPreferences.commitMe(func: SharedPreferences.Editor.() -> SharedPreferences.Editor) {
+    this.edit().func().commit()
+}
