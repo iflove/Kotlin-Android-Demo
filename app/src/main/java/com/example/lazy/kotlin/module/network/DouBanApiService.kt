@@ -1,6 +1,6 @@
 package com.example.lazy.kotlin.module.network
 
-import android.support.annotation.Nullable
+import androidx.annotation.Nullable
 import com.example.lazy.kotlin.douban.constant.API_VERSION
 import com.example.lazy.kotlin.douban.domain.MovieResourcesProperties
 import com.example.lazy.kotlin.module.annotation.Optional

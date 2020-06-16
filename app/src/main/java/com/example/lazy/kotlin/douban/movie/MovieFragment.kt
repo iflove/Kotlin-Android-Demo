@@ -1,9 +1,9 @@
 package com.example.lazy.kotlin.douban.movie
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.douban.anko.component.LoadingFragment
 import com.example.lazy.kotlin.douban.base.BaseFragment
@@ -55,15 +55,15 @@ class MovieFragment : BaseFragment(), MovieConstant.MovieView {
 
     override fun showLoading() {
         val loadingFragment = LoadingFragment()
-        fragmentManager.inTransaction {
+        fragmentManager?.inTransaction {
             add(R.id.containerViewId, loadingFragment, "LoadingFragment")
         }
     }
 
     override fun hideLoading() {
         val fragment = fragmentManager?.findFragmentByTag("LoadingFragment")
-        fragmentManager.inTransaction {
-            remove(fragment)
+        fragmentManager?.inTransaction {
+            remove(fragment!!)
         }
     }
 

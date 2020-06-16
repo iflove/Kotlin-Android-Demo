@@ -3,16 +3,16 @@ package com.example.lazy.kotlin.douban.base
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
 import com.example.lazy.kotlin.module.interfaces.BaseViewInterface
 import com.lazy.kotlin.helper.utils.ActivityManager
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 
 /**
  * Created by lazy on 2017/7/13.
  */
-abstract class BaseActivity : AppCompatActivity(), BaseViewInterface {
+abstract class BaseActivity : RxAppCompatActivity(), BaseViewInterface {
 
     val TAG = this::class.java.simpleName
 

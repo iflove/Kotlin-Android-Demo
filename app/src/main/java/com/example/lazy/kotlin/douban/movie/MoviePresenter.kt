@@ -1,7 +1,8 @@
 package com.example.lazy.kotlin.douban.movie
 
-import android.util.Log
 import com.example.lazy.kotlin.douban.base.BaseDouBanPresenter
+import com.lazy.library.logging.Logcat
+import com.trello.rxlifecycle2.android.FragmentEvent
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -19,6 +20,7 @@ class MoviePresenter : BaseDouBanPresenter(), MovieConstant.MoviePresenter {
         val comingSoon = douBanApiService.fetchComingSoon(null, null)
         val top250 = douBanApiService.fetchTop250(null, null)
         val disposable = Observable.mergeArray(movieInTheaters, comingSoon, top250)
+                .compose((movieView as MovieFragment).bindUntilEvent(FragmentEvent.DESTROY_VIEW))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnSubscribe {
@@ -27,7 +29,7 @@ class MoviePresenter : BaseDouBanPresenter(), MovieConstant.MoviePresenter {
                 .subscribe({
                     movieView.onLoadMovieComplete(it)
                 }, {
-                    Log.d("xxa", it.cause.toString())
+                    Logcat.d("xxa", it.cause.toString())
                 }, {
                     movieView.hideLoading()
                     movieView.onLoadAllMovieComplete()

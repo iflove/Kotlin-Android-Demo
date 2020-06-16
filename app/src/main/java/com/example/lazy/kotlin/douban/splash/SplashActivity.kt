@@ -2,7 +2,7 @@ package com.example.lazy.kotlin.douban.splash
 
 import android.Manifest
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.douban.main.MainActivity
 import com.tbruyelle.rxpermissions2.RxPermissions

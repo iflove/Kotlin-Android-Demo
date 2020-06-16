@@ -1,10 +1,10 @@
 package com.example.lazy.kotlin.module.utils
 
 import android.app.Application
-import android.support.annotation.ArrayRes
-import android.support.annotation.ColorRes
-import android.support.annotation.StringRes
 import android.util.Log
+import androidx.annotation.ArrayRes
+import androidx.annotation.ColorRes
+import androidx.annotation.StringRes
 import com.lazy.kotlin.helper.R
 
 /**

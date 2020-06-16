@@ -1,7 +1,7 @@
 package com.example.lazy.kotlin.anko
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.douban.anko.component.LoadingFragment
 import com.example.lazy.kotlin.module.extension.inTransaction

@@ -1,8 +1,8 @@
 package com.example.lazy.kotlin.douban.main
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentPagerAdapter
 import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.douban.base.BaseActivity
 import com.example.lazy.kotlin.douban.movie.MovieFragment

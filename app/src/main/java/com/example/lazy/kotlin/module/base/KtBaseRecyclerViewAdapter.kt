@@ -1,8 +1,8 @@
 package com.example.lazy.kotlin.module.base
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * Created by lazy on 2017/7/22.

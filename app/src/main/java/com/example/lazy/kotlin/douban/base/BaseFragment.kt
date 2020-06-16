@@ -2,13 +2,13 @@ package com.example.lazy.kotlin.douban.base
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.module.interfaces.BaseViewInterface
+import com.trello.rxlifecycle2.components.support.RxFragment
 import org.jetbrains.anko.AnkoComponent
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.support.v4.ctx
@@ -18,14 +18,13 @@ import org.jetbrains.anko.support.v4.ctx
  * Created by lazy on 2017/7/13.
  */
 
-abstract class BaseFragment : Fragment(), BaseViewInterface {
+abstract class BaseFragment : RxFragment(), BaseViewInterface {
 
     protected var mRootView: View? = null
 
     protected abstract val layoutId: Int @LayoutRes get
 
-
-    final override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    final override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                                     savedInstanceState: Bundle?): View? {
         if (mRootView == null) {
             val ankoComponent = ankoComponent<BaseFragment>()
@@ -67,5 +66,5 @@ abstract class BaseFragment : Fragment(), BaseViewInterface {
     override fun setupViews() {}
     override fun setViewListener() {}
     override fun processExtraData() {}
-    override fun activity(): Activity = this.activity
+    override fun activity(): Activity = this.activity!!
 }

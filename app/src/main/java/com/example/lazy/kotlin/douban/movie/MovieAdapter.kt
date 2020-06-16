@@ -1,14 +1,14 @@
 package com.example.lazy.kotlin.douban.movie
 
 import android.content.Context
-import android.support.v7.widget.AppCompatImageView
-import android.support.v7.widget.AppCompatTextView
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.AndroidRuntimeException
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.lazy.kotlin.R
 import com.example.lazy.kotlin.douban.domain.MovieResourcesProperties
@@ -50,8 +50,8 @@ class MovieAdapter : RecyclerView.Adapter<MovieViewHolder>() {
 
     override fun getItemCount(): Int = movies.size
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MovieViewHolder {
-        context = parent?.context!!
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+        context = parent.context
         val itemView = LayoutInflater.from(context).inflate(R.layout.item_frodo_rexxar, parent, false)
         return MovieViewHolder(itemView)
     }

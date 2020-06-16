@@ -1,6 +1,6 @@
 package com.example.lazy.kotlin.douban.base
 
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 import com.example.lazy.kotlin.module.extension.toast
 
 /**

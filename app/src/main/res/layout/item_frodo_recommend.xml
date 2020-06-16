@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/movieRecommendImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"

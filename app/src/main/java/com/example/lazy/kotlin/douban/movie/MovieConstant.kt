@@ -1,6 +1,6 @@
 package com.example.lazy.kotlin.douban.movie
 
-import android.support.annotation.Nullable
+import androidx.annotation.Nullable
 import com.example.lazy.kotlin.douban.base.BasePresenter
 import com.example.lazy.kotlin.douban.base.LoadDataView
 import com.example.lazy.kotlin.douban.domain.MovieResourcesProperties

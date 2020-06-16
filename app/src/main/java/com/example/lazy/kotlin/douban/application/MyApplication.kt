@@ -1,7 +1,7 @@
 package com.example.lazy.kotlin.douban.application
 
 import android.content.Context
-import android.support.multidex.MultiDexApplication
+import androidx.multidex.MultiDexApplication
 import com.example.lazy.kotlin.module.utils.ResUtil
 import com.lazy.library.logging.Logcat
 
